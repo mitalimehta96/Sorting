@@ -7,9 +7,9 @@ int merges(int high,int low,int mid)
    int k=low;
    int j=mid+1;
    int b[50];
-   while(i<=mid && j<=high)
+   while(i <= mid && j <= high)
    {
-       if(a[i]<a[j])
+       if(a[i] < a[j])
        {
            b[k]=a[i];
            i++;
@@ -21,19 +21,19 @@ int merges(int high,int low,int mid)
        }
        k++;
    }
-   while(i<=mid)
+   while(i <= mid)
    {
         b[k]=a[i];
            i++;
            k++;
    }
-   while(j<=high)
+   while(j <= high)
    {
         b[k]=a[j];
            j++;
            k++;
    }
-   for(i=low;i<k;i++)
+   for(i=low; i<k; i++)
       a[i]=b[i];
 
    return 0;
@@ -43,7 +43,7 @@ int merges(int high,int low,int mid)
 int mergesort(int low,int high)
 {
     int mid;
-    if(low<high)
+    if(low < high)
     {
         mid=(low+high)/2;
         mergesort(low,mid);
@@ -58,16 +58,16 @@ int main()
     int n;
     cout<<"Enter number of elements:\t";
     cin >> n;
-     cout<<"Enter elements:\n";
-     for(int i=0;i<n;i++)
-    cin >> a[i];
-     cout<<"Unsorted array is:\n";
-     for(int i=0;i<n;i++)
-    cout<< a[i];
+    cout<<"Enter elements:\n";
+    for(int i=0; i<n; i++)
+         cin >> a[i];
+    cout<<"Unsorted array is:\n";
+    for(int i=0;i<n;i++)
+         cout<< a[i];
     cout<<endl;
     mergesort(0,n-1);
-     cout<<"Sorted array:\n";
-     for(int i=0;i<n;i++)
-    cout<< a[i];
+    cout<<"Sorted array:\n";
+    for(int i=0; i<n; i++)
+         cout<< a[i];
     return 0;
 }
