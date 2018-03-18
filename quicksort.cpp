@@ -14,10 +14,10 @@ int partition(int A[], int p, int r)
     cout<<"\nPivot selected = "<<x<<endl;
     i=p-1;
 
-    for(int j=p;j<=r-1;j++)
+    for(int j=p; j<=r-1; j++)
     {
         comparisons++;
-        if(A[j]<x)
+        if(A[j] < x)
         {
             i=i+1;
             temp=A[i];
@@ -32,7 +32,7 @@ int partition(int A[], int p, int r)
     A[r]=temp;
     swaps++;
     cout<<"\nIntermediate Array:\n";
-    for(k=0;k<n;k++)
+    for(k=0; k<n; k++)
       {
         cout<<A[k]<<" ";
       }
@@ -46,7 +46,7 @@ int partition(int A[], int p, int r)
 void quicksort(int A[], int p, int r)
 {
     int q;
-    if(p<r)
+    if(p < r)
     {
         q=partition(A,p,r); //q represents sorted position
         quicksort(A,p,q-1);
@@ -62,16 +62,16 @@ int main()
     cin>>n;
     int A[n];
     cout<<"\nEnter elements for sorting:\n";
-    for(i=0;i<n;i++)
-    {
-        cin>>A[i];
-    }
+    for(i=0; i<n; i++)
+        {
+            cin>>A[i];
+        }
     quicksort(A,0,n-1);
     cout<<"\n\nSorted Array is:\n";
-     for(i=0;i<n;i++)
-    {
-        cout<<A[i]<<" ";
-    }
+     for(i=0; i<n; i++)
+        {
+            cout<<A[i]<<" ";
+        }
     cout<<"\n\nTotal number of comparisons = "<<totc;
     cout<<"\nTotal number of swaps = "<<tots;
     return 0;
